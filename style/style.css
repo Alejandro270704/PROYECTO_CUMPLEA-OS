@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cartaFull{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.texto3{
+    width: 30vw;
+    font-size: 20px;
+}
