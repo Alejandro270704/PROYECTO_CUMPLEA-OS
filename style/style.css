@@ -15,12 +15,14 @@
     left: 0;
     min-width: 100%;
     min-height: 100%;
+    will-change: transform, opacity;
     transform: scale(1.1);
 }
 
 .contenido{
     display: flex;
     justify-content: center;
+    animation: aparecer 1s ease-in-out;
 }
 .contenedor{
     width: 400px;
@@ -90,17 +92,19 @@
     transition: 
         transform 0.9s ease-in-out,
         clip-path 0.3s ;
-    clip-path: inset(45% 0 0 0);
-    overflow: hidden;
-    height: 400px;
+    min-height: 400px;        
+    overflow: visible;
+    clip-path: inset(45% 0 0 0); 
+    height: 500px;
 
 }
 .texto3{
     border: 3px dotted #000;
     padding: 20px;
-    font-size: 17px;
+    font-size: 20px;
     overflow: scroll;
     height: 300px;
+    
 }
 .imagen1 img{
     width: 80px;
@@ -170,4 +174,50 @@
 }
 .sobre.desabilitar::before {
     pointer-events: none;
+}
+@keyframes aparecer {
+   0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.titulo{
+    z-index: 0;
+    color: white;
+    font-size: 30px;
+    position: fixed;
+    top: 220px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    box-shadow: 
+    0 0 10px #ff1a1a,
+    0 0 20px #ff3333,
+    0 0 40px #ff4d4d,
+    0 0 80px #ff6666;
+
+}
+.pareja{
+    height: 120px;
+}
+.pareja img {
+    width: 170px;
+    height: 180px;
+}
+@media(max-width: 431px){
+    .contenido{
+        margin-top: 4em;
+    }
+    .titulo{
+        margin-top: 30px;
+    }
+    .sobre {
+        width: 100%; 
+    }
+    
+    
+    
 }

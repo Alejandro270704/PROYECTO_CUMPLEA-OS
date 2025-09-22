@@ -30,7 +30,12 @@ document.addEventListener("click",(e)=>{
                 carta.classList.remove("cerrar");
                 carta.classList.remove("abierta");
                 sobre.classList.remove("desabilitar"); 
-            }, 600);
+            }, 500);
         }
     }
 });
+document.addEventListener("click", () => {
+    const audio = document.getElementById("miAudio");
+    audio.muted = false;
+    audio.play();
+  }, { once: true });
